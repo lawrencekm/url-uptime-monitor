@@ -5,8 +5,8 @@ This Node.js, express application allows you to monitor URLs and receive notific
 
 Author: Lawrence Njenga
 Email: Lawrencekm04 @ gmail . com
-Demo: To see a live demo of this application, please visit URL Monitoring Demo at https://www.urlmonitor.wezadata.com
-Github: https://github.com/lawrencekm
+Demo: To see a live demo of this application, please visit URL Monitoring Demo at https://url-uptime-monitor.onrender.com/
+Github: https://github.com/lawrencekm/url-uptime-monitor
 
 
 Features
