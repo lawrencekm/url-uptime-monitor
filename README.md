@@ -1,12 +1,13 @@
 
-URL Uptime Monitoring Application
+URL Uptime Monitor
 =================================
-This Node.js, express application allows you to monitor URLs and receive notifications via SMS or email when a URL is not accessible/reachable. You can add and delete URLs along with corresponding notification details via command-line arguments or an HTML form. Notifications are ONLY sent when URL is NOT reachable. ie. returns non 200 HTTP status code.
+This Node.js, express application allows you to monitor URLs and receive notifications via SMS or email when a URL is not accessible/reachable. You can add and delete URLs along with corresponding notification details via command-line arguments or an HTML form. Notifications are ONLY sent when URL is NOT reachable. ie. when your URL returns non 200 HTTP status code.
 
 Author: Lawrence Njenga
-Email: Lawrencekm04 @ gmail . com
+
 Demo: To see a live demo of this application, please visit URL Monitoring Demo at https://url-uptime-monitor.onrender.com/
-Github: https://github.com/lawrencekm/url-uptime-monitor
+
+View code on Github: https://github.com/lawrencekm/url-uptime-monitor
 
 
 Features
@@ -30,7 +31,7 @@ Navigate to the project directory.
 
 Configuration
 =============
-create a .env file with notification values
+create a .env file with notification parameters
 
 eg.
 SMS_NOTIFICATION_ENDPOINT="https://sozuri.net/api/v1/messaging"
@@ -45,7 +46,7 @@ EMAIL_NOTIFICATION_USERNAME="Doves"
 EMAIL_NOTIFICATION_KEY="zpVkxu8rYD3UOUhtm............VXSRHO1aPrM78StB6PPz0GwQ"
 EMAIL_NOTIFICATION_CHANNEL="email"
 EMAIL_NOTIFICATION_TYPE="email"
-EMAIL_NOTIFICATION_FROM="lawrence@sozuri.net"
+EMAIL_NOTIFICATION_FROM="john@sozuri.net"
 
 Replace the values in the .env file variable with your actual notification endpoint URL.
 
@@ -88,17 +89,21 @@ Use the forms to add or delete URLs. You must enter the URL exactly(without trai
 Code Explanation
 ================
 server.mjs
-Dependencies:
 
+Dependencies:
+------------
 express: For creating the web server.
 body-parser: For parsing form data.
 fs: For file system operations.
 axios: For making HTTP requests.
 cron: For scheduling tasks.
 yargs for commandline interface
+dotenv for getting values from .env file
+FormData for encoding form inputs
+validator for form data validation
 
 Functions:
-
+----------
 loadUrls: Loads URLs from a JSON file. Initializes an empty array if the file doesn't exist.
 saveUrls: Saves the URL list to the JSON file.
 addUrl: Adds a new URL, mobile number, and email to the list.
@@ -107,11 +112,11 @@ sendNotification: Sends a notification to the specified endpoint.
 checkUrls: Checks each URL's status and sends a notification if the URL is not accessible.
 
 Cron Job:
-=========
+---------
 Schedules the checkUrls function to run every minute.
 
 Express Server:
-===============
+---------------
 Serves an HTML form for adding and deleting URLs.
 Handles form submissions and updates the URL list accordingly.
 HTML Form
