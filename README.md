@@ -31,6 +31,8 @@ Install the necessary dependencies:
 
      npm install
 
+Note: You can fork the repo and deploy it render.com as I have done in the demo in minutes, (platform to build, deploy, and scale your apps with unparalleled ease with free options)
+
 Configuration
 =============
 Replace the placeholder URL in the notificationEndpoint variable with your actual notification endpoint URL.
@@ -64,6 +66,7 @@ http://localhost:3000
 Use the forms to add or delete URLs.
 
 Code Explanation
+================
 server.mjs
 Dependencies:
 

@@ -96,9 +96,14 @@ const addUrl = (url, mobile, email) => {
 
 const deleteUrl = (url) => {
   let urls = loadUrls();
+  const initialLength = urls.length;
   urls = urls.filter((entry) => entry.url !== url);
-  saveUrls(urls);
-  console.log(`Deleted URL: ${url}`);
+  if (urls.length < initialLength) {
+    saveUrls(urls);
+    console.log(`Deleted URL: ${url}`);
+  } else {
+    console.log(`URL not found: ${url}`);
+  }
 };
 
 // Function to send SMS
