@@ -27,19 +27,39 @@ Clone the repository or download the source code.
 
 Navigate to the project directory.
 
+
+Configuration
+=============
+create a .env file with notification values
+
+eg.
+SMS_NOTIFICATION_ENDPOINT="https://sozuri.net/api/v1/messaging"
+SMS_NOTIFICATION_USERNAME="doves"
+SMS_NOTIFICATION_KEY="zpVkxu8rYD.............O1aPrM78StB6PPz0GwQ"
+SMS_NOTIFICATION_CHANNEL="sms"
+SMS_NOTIFICATION_TYPE="promotional"
+SMS_NOTIFICATION_FROM="Sozuri"
+
+EMAIL_NOTIFICATION_ENDPOINT="https://sozuri.net/api/v1/messaging/email"
+EMAIL_NOTIFICATION_USERNAME="Doves"
+EMAIL_NOTIFICATION_KEY="zpVkxu8rYD3UOUhtm............VXSRHO1aPrM78StB6PPz0GwQ"
+EMAIL_NOTIFICATION_CHANNEL="email"
+EMAIL_NOTIFICATION_TYPE="email"
+EMAIL_NOTIFICATION_FROM="lawrence@sozuri.net"
+
+Replace the values in the .env file variable with your actual notification endpoint URL.
+
+Create a urls.json file in the document root writable by the web user to save your tracked URLS. This application uses a file to store urls to track. 
+
 Install the necessary dependencies:
 
      npm install
 
 Note: You can fork the repo and deploy it render.com as I have done in the demo in minutes, (platform to build, deploy, and scale your apps with unparalleled ease with free options)
 
-Configuration
-=============
-Replace the placeholder URL in the notificationEndpoint variable with your actual notification endpoint URL.
-
 Usage
 ========
-Command-Line Interface
+1.Command-Line Interface
 ======================
 You can add or delete URLs using command-line arguments.
 
@@ -51,19 +71,19 @@ Delete a URL:
 -------------
      node server.mjs delete --url "https://example.com"
 
-Web Interface
+2.Web Interface
 =============
 You can also add or delete URLs using an HTML form.
 
 Start the server:
 
-     node server.mjs
+     node server.mjs or npm start
 
 Open your browser and navigate to:
 
 http://localhost:3000
 
-Use the forms to add or delete URLs.
+Use the forms to add or delete URLs. You must enter the URL exactly(without trailing/leading spaces) to delete.
 
 Code Explanation
 ================
