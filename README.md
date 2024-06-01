@@ -1,6 +1,6 @@
 
 URL Uptime Monitoring Application
-
+=================================
 This Node.js, express application allows you to monitor URLs and receive notifications via SMS or email when a URL is not accessible/reachable. You can add and delete URLs along with corresponding notification details via command-line arguments or an HTML form.
 
 Author: Lawrence Njenga
