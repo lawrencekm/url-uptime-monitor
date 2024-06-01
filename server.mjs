@@ -222,7 +222,7 @@ app.get('/', (req, res) => {
 
   res.send(`
     <h1>URL Uptime Monitor</h1>
-    <p>Monitor URLs and receive notifications via SMS or email when a URL is not accessible/reachable.
+    <p>Monitor URLs and receive notifications every 5minutes via SMS or email when a URL is not accessible/reachable. Notifications are ONLY sent when URL is NOT reachable. ie. returns non 200 HTTP status code.
     You can add and delete URLs along with corresponding notification details via command-line arguments or an HTML form.</p>
     <p><b>Demo:</b> To see a live demo of this application, please visit URL Monitoring Demo <a href="https://url-uptime-monitor.onrender.com/">HERE</a></p>
     <p>Read installation instructions, download code, or comment on Github: <a href="https://github.com/lawrencekm/url-uptime-monitor">URL Uptime Monitor</a></p>

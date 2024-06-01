@@ -1,7 +1,7 @@
 
 URL Uptime Monitoring Application
 =================================
-This Node.js, express application allows you to monitor URLs and receive notifications via SMS or email when a URL is not accessible/reachable. You can add and delete URLs along with corresponding notification details via command-line arguments or an HTML form.
+This Node.js, express application allows you to monitor URLs and receive notifications via SMS or email when a URL is not accessible/reachable. You can add and delete URLs along with corresponding notification details via command-line arguments or an HTML form. Notifications are ONLY sent when URL is NOT reachable. ie. returns non 200 HTTP status code.
 
 Author: Lawrence Njenga
 Email: Lawrencekm04 @ gmail . com
@@ -11,7 +11,7 @@ Github: https://github.com/lawrencekm/url-uptime-monitor
 
 Features
 ========
-Monitor URLs and check their status every minute.
+Monitor URLs and check their status every 5 minutes. Edit the line cron.schedule('*/5 * * * *', checkUrls); in server.mjs accordingly to adjust frequency of tracking.
 Receive notifications via SMS or email if a URL is not accessible.
 Add and delete URLs using command-line arguments.
 Add and delete URLs using an HTML form via a web interface.
