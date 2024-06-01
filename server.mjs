@@ -202,8 +202,8 @@ const checkUrls = async () => {
 
 
 
-// Schedule the URL checks every 5 minutes. change to suit your needs e.g. '* * * * *' for every minute, etc.
-cron.schedule('*/5 * * * *', checkUrls);
+// Schedule the URL checks every 5 minutes. change to suit your needs e.g. '*/5 * * * *' for every 5 minutes, etc.
+cron.schedule('* * * * *', checkUrls);
 
 // Serve HTML form and table
 app.get('/', (req, res) => {
