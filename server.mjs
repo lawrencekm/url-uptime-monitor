@@ -221,25 +221,30 @@ app.get('/', (req, res) => {
   });
 
   res.send(`
-    <h1>Add URL</h1>
+    <h1>URL Uptime Monitor</h1>
+    <p>Monitor URLs and receive notifications via SMS or email when a URL is not accessible/reachable.
+    You can add and delete URLs along with corresponding notification details via command-line arguments or an HTML form.</p>
+    <p><b>Demo:</b> To see a live demo of this application, please visit URL Monitoring Demo <a href="https://url-uptime-monitor.onrender.com/">HERE</a></p>
+    <p>Read installation instructions, download code, or comment on Github: <a href="https://github.com/lawrencekm/url-uptime-monitor">URL Uptime Monitor</a></p>
+    <h3>Add URL</h3>
     <form action="/add" method="post">
-      <label for="url">URL:</label><br>
+      <label for="url">URL to monitor:</label><br>
       <input type="url" id="url" name="url" required><br>
-      <label for="mobile">Mobile:</label><br>
+      <label for="mobile">Mobile to notify:</label><br>
       <input type="tel" id="mobile" name="mobile" placeholder="254725111111,2547xx" required><br>
-      <label for="email">Email:</label><br>
+      <label for="email">Email to notify:</label><br>
       <input type="email" id="email" name="email" placeholder="law@gmail.com,far@yahoo.com" required><br><br>
-      <input type="submit" value="Add URL">
+      <input type="submit" value="Add URL to track">
     </form>
 
-    <h1>Delete URL</h1>
+    <h3>Delete URL</h3>
     <form action="/delete" method="post">
       <label for="url">URL:</label><br>
       <input type="text" id="url" name="url" required><br><br>
       <input type="submit" value="Delete URL">
     </form>
 
-    <h1>URL Status</h1>
+    <h3>URL Status</h3>
     <table border="1">
       <tr>
         <th>URL</th>
