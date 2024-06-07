@@ -1,0 +1,23 @@
+version: '3'
+services:
+  uptimenode:
+    build: .
+    volumes:
+      - ./:/uptime_app
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+    working_dir: /uptime_app
+    networks:
+      - uptimenet_mynet
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+networks:
+  uptimenet_mynet:
+    external: false
