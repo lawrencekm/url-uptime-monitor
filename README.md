@@ -31,7 +31,7 @@ Navigate to the project directory.
 
 Configuration
 =============
-create a .env file with notification parameters
+create a .env file with notification parameters from your https://sozuri.net messaging project (or compatible API) credentials 
 
 eg.
 SMS_NOTIFICATION_ENDPOINT="https://sozuri.net/api/v1/messaging"
@@ -62,7 +62,7 @@ Docker installation
 -------------
 You can run the aplication in a docker container simply by
 -Ensure you have docker compose or docker desktop installed
--Clone the repo and run. 
+-Clone the repo, create a .env file with your https://sozuri.net (or compatible API) credentials and run. 
      docker compose up --build -d 
 -Access your application at http://yourserver:3000  #modify the port as necessary in server.mjs
 
