@@ -58,7 +58,15 @@ Install the necessary dependencies:
 
 Note: You can fork the repo and deploy it render.com as I have done in the demo in minutes, (platform to build, deploy, and scale your apps with unparalleled ease with free options)
 
-Usage
+Docker installation
+-------------
+You can run the aplication in a docker container simply by
+-Ensure you have docker compose or docker desktop installed
+-Clone the repo and run. 
+     docker compose up --build -d 
+-Access your application at http://yourserver:3000  #modify the port as necessary in server.mjs
+
+USAGE
 ========
 1.Command-Line Interface
 ======================
@@ -85,6 +93,7 @@ Open your browser and navigate to:
 http://localhost:3000
 
 Use the forms to add or delete URLs. You must enter the URL exactly(without trailing/leading spaces) to delete.
+
 
 Code Explanation
 ================
@@ -154,6 +163,9 @@ Run the tests:
 
      npm test
 
+CHANGELOG
+=========
+For a detailed list of changes, see the [changelog](./CHANGELOG.md).
 
 License
 =======
