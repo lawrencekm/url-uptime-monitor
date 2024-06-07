@@ -202,19 +202,22 @@ const checkUrls = async () => {
 
 
 
-// Schedule the URL checks every 5 minutes. change to suit your needs e.g. '*/5 * * * *' for every 5 minutes, etc.
+// Schedule the URL checks every 1,2,5 etc minutes. change to suit your needs e.g. '*/5 * * * *' for every 5 minutes, etc.
 cron.schedule('* * * * *', checkUrls);
 
 // Serve HTML form and table
 app.get('/', (req, res) => {
   const urls = loadUrls();
   let tableRows = '';
+  function maskString(string) {
+    return string.slice(0, 4).replace(/./g, '*') + string.slice(4);
+  }
   urls.forEach(({ url, mobile, email, last_status, last_time }) => {
     tableRows += `
       <tr>
         <td>${url}</td>
-        <td>${mobile}</td>
-        <td>${email}</td>
+        <td>${maskString(mobile)}</td>
+        <td>${maskString(email)}</td>
         <td>${last_status ? last_status : 'Not checked yet'}</td>
         <td>${last_time ? last_time : 'Not checked yet'}</td>
       </tr>`;
@@ -222,7 +225,7 @@ app.get('/', (req, res) => {
 
   res.send(`
     <h1>URL Uptime Monitor</h1>
-    <p>Monitor URLs and receive notifications every 5minutes via SMS or email when a URL is not accessible/reachable. Notifications are ONLY sent when URL is NOT reachable. ie. returns non 200 HTTP status code.
+    <p>Monitor URLs and receive notifications every 1 minutes via SMS or email when a URL is not accessible/reachable. Notifications are ONLY sent when URL is NOT reachable. ie. returns non 200 HTTP status code.
     You can add and delete URLs along with corresponding notification details via command-line arguments or an HTML form.</p>
     <p><b>Demo:</b> To see a live demo of this application, please visit URL Monitoring Demo <a href="https://url-uptime-monitor.onrender.com/">HERE</a></p>
     <p>Read installation instructions, download code, or comment on Github: <a href="https://github.com/lawrencekm/url-uptime-monitor">URL Uptime Monitor</a></p>
